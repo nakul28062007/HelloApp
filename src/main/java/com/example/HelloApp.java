@@ -1,16 +1,17 @@
 package com.example;
 /**
- * HelloApp - UC2
+ * HelloApp - UC3: A simple Java application that prints a greeting message to the console.
  * Author: Nakulvasudev T
- * Version: 2.0
+ * Version: 3.0
  */
 
 public class HelloApp {
     public static void main(String[] args) {
+        String name = "World";
         if(args.length > 0) {
-            System.out.println("Hello " + args[0] + "!");
-        } else {
-            System.out.println("Hello World!");
+            name = args[0];
+        }
+        System.out.println("Hello, " + name + "!");
         }
     }
-}
+
