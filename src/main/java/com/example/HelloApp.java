@@ -1,20 +1,29 @@
 package com.example;
 /**
- * HelloApp - UC4: Multiple Command line arguments using StringBuilder.
+ * HelloApp - UC5: Multiple Command line arguments using StringBuilder with enhanced for loop.
  * Author: Nakulvasudev T
- * Version: 4.0
+ * Version: 5.0
  */
 
 public class HelloApp {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
-        for(int i = 0 ; i<args.length; i++){
-            sb.append(args[i]);
-            if(i<args.length-1){
+        boolean first = true;
+        for (String arg : args) {
+            if(!first){
                 sb.append(" ");
             }
+            else{
+                sb.append(arg);
+                first = false;
+            }
         }
-        System.out.println(sb.toString());
+        if(sb.length() == 0){
+            System.out.println("Hello, World!");
+        }
+        else{
+            System.out.println("Hello, " + sb.toString() + "!");
+        }
     }
 }
 
